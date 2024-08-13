@@ -1,0 +1,11 @@
+HTTP REQUEST
+GET - Use specifically to pull data from the backend (server side)
+POST - Use specifically to send info from frontend (client side) to backend
+DELETE - Use specifically to delete info from the backend
+PUT 
+
+Create virtual environment: python3 -m venv ENV(whatever name or title wanted for virtual environment)
+
+Activate virtual environment: source ENV/bin/activate
+
+Install requirements: pip install -r requirements.txt(or whatever file has requirements)
