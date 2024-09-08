@@ -6,15 +6,33 @@ PUT
 
 Create virtual environment: python3 -m venv ENV(whatever name or title wanted for virtual environment)
 
-Activate virtual environment: source ENV/bin/activate
+Activate virtual environment: source (environmentName)/bin/activate
+
+Deactivate: just type "deactivate"
+
+to pull local URL: python3 (nameOfTheApp)
+
 
 Install requirements: pip install -r requirements.txt(or whatever file has requirements)
 
+linux commands:
+
+pwd: where I am
+
+ls: list files in directory
+
+ls -a: include all files and hidden files 
+
+nano test.py
+
+cat test.py
  	
 gunicorn app:demo
+
+git status
 
 git add . 
 
 git commit -m ""
 
-git push origin
+git push -u origin main

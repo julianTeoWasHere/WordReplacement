@@ -118,5 +118,35 @@ def dummy():
         if request.method == "DELETE":
             return "Data successfully deleted!"
 
+
+app = Flask(__name__)
+
+
+def highlight_and_replace(text, old_word, new_word):
+    """
+    Highlights the old words and replaces them with the new word.
+    """
+    highlighted_text = re.sub(rf'\b({re.escape(old_word)})\b', r'<span class="highlight">\1</span>', text)
+    modified_text = text.replace(old_word, new_word)
+    return highlighted_text, modified_text
+
+
+@app.route('/')
+def index():
+    return render_template("index.html")
+
+
+@app.route('/process_text', methods=['POST'])
+def process_text():
+    # Get the text and words from the form
+    text_input = request.form.get('text_input')
+    old_word = request.form.get('old_word')
+    new_word = request.form.get('new_word')
+
+    # Highlight and replace the words
+    highlighted_text, modified_text = highlight_and_replace(text_input, old_word, new_word)
+
+    # Render the result in the right section
+    return render_template("index.html", modified_text=highlighted_text + '<br><br>' + modified_text)
 if __name__ == "__main__":
     app.run(debug=True)
