@@ -26,13 +26,21 @@ ls -a: include all files and hidden files
 nano test.py
 
 cat test.py
+
+echo: creates file and leaves it there
+
+nano: creates file and opens it to edit it
  	
 gunicorn app:demo
 
 git status
 
+**before pushing, check to make sure I am not pushing .venv, if I am then ingore by creating ".gitignore" file. any files added to .gitignore will be ignored by GitHub. make sure to start with .*
+ 	
+
 git add . 
 
-git commit -m ""
+git commit -m "(message)"
 
 git push -u origin main
+
